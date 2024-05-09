@@ -1,35 +1,38 @@
 <?php
 
-class Production
-{
+// class Production
+// {
 
-  public $title;
-  public $language;
-  public $vote;
+//   public $title;
+//   public $language;
+//   public $vote;
 
-  function __construct(string $_title, string $_language, int $_vote)
-  {
-    $this->setTitle($_title);
-    $this->language = $_language;
-    $this->vote = $_vote;
-  }
+//   function __construct(string $_title, string $_language, int $_vote)
+//   {
+//     $this->setTitle($_title);
+//     $this->language = $_language;
+//     $this->vote = $_vote;
+//   }
 
-  public function setTitle(string $_title)
-  {
-    $this->title = $_title;
-  }
+//   public function setTitle(string $_title)
+//   {
+//     $this->title = $_title;
+//   }
 
-  public function getTitle()
-  {
-    return $this->title;
-  }
-}
+//   public function getTitle()
+//   {
+//     return $this->title;
+//   }
+// }
 
-$movie = new Production("Fast and furious 5", "ita", 10);
-var_dump($movie);
+require_once __DIR__ . "/models/Production.php";
+require_once __DIR__ ."/db.php";
 
-$movie2 = new Production("La vita è bella", "eng", 5);
-var_dump($movie2);
+// $movie = new Production("Fast and furious 5", "ita", 10);
+// var_dump($movie);
+
+// $movie2 = new Production("La vita è bella", "eng", 5);
+// var_dump($movie2);
 
 ?>
 
@@ -57,18 +60,19 @@ var_dump($movie2);
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td><?= $movie->title ?></td>
-            <td><?= $movie->language ?></td>
-            <td><?= $movie->vote ?></td>
-          </tr>
-          <tr>
-          <th scope="row">2</th>
-            <td><?= $movie2->title ?></td>
-            <td><?= $movie2->language ?></td>
-            <td><?= $movie2->vote ?></td>
-          </tr>
+          <?php
+            for($i = 0; $i < count($movie); $i++){
+              $el = $movie[$i];
+              ?>
+              <tr>
+                <th scope="row">1</th>
+                <td><?= $el->title ?></td>
+                <td><?= $el->language ?></td>
+                <td><?= $el->vote ?></td>
+              </tr>
+              <?php
+            }
+          ?>
         </tbody>
       </table>
     </div>
