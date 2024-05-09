@@ -1,38 +1,8 @@
 <?php
 
-// class Production
-// {
-
-//   public $title;
-//   public $language;
-//   public $vote;
-
-//   function __construct(string $_title, string $_language, int $_vote)
-//   {
-//     $this->setTitle($_title);
-//     $this->language = $_language;
-//     $this->vote = $_vote;
-//   }
-
-//   public function setTitle(string $_title)
-//   {
-//     $this->title = $_title;
-//   }
-
-//   public function getTitle()
-//   {
-//     return $this->title;
-//   }
-// }
-
 require_once __DIR__ . "/models/Production.php";
-require_once __DIR__ ."/db.php";
-
-// $movie = new Production("Fast and furious 5", "ita", 10);
-// var_dump($movie);
-
-// $movie2 = new Production("La vita è bella", "eng", 5);
-// var_dump($movie2);
+require_once __DIR__ . "/models/Genre.php";
+require_once __DIR__ . "/db.php";
 
 ?>
 
@@ -49,33 +19,48 @@ require_once __DIR__ ."/db.php";
 
   <div id="app">
 
-    <div class="container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Language</th>
-            <th scope="col">Vote</router-link></th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-            for($i = 0; $i < count($movie); $i++){
-              $el = $movie[$i];
-              ?>
-              <tr>
-                <th scope="row">1</th>
-                <td><?= $el->title ?></td>
-                <td><?= $el->language ?></td>
-                <td><?= $el->vote ?></td>
-              </tr>
-              <?php
-            }
-          ?>
-        </tbody>
-      </table>
-    </div>
+    <!-- Header -->
+    <header>
+
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Language</th>
+              <th scope="col">Vote</th>
+              <th scope="col">Genre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              for($i = 0; $i < count($movie); $i++){
+                $el = $movie[$i];
+                ?>
+                <tr>
+                  <th scope="row">1</th>
+                  <td><?= $el->title ?></td>
+                  <td><?= $el->language ?></td>
+                  <td><?= $el->vote ?></td>
+                  <td><?= $el->genre->name ?></td>
+                </tr>
+                <?php
+              }
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
 
   </div>
 
