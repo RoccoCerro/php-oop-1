@@ -29,6 +29,9 @@ require_once __DIR__ . "/models/Movie.php";
     <!-- Main -->
     <main>
       <div class="container">
+
+        <!-- General -->
+        <h1>General</h1>
         <table class="table">
           <thead>
             <tr>
@@ -50,6 +53,41 @@ require_once __DIR__ . "/models/Movie.php";
                   <td><?= $el->language ?></td>
                   <td><?= $el->vote ?></td>
                   <td><?= $el->genre->name ?></td>
+                </tr>
+                <?php
+              }
+            ?>
+          </tbody>
+        </table>
+
+        <!-- Movie -->
+        <h1>Movie</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Language</th>
+              <th scope="col">Vote</th>
+              <th scope="col">Genre</th>
+              <th scope="col">Profits</th>
+              <th scope="col">Duration</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              for($i = 0; $i < count($movie); $i++){
+                $el = $movie[$i];
+                ?>
+                <tr>
+                  <th scope="row"><?= $i +1 ?></th>
+                  <td><?= $el->title ?></td>
+                  <td><?= $el->language ?></td>
+                  <td><?= $el->vote ?></td>
+                  <td><?= $el->genre->name ?></td>
+                  <td><?= $el->profits ?></td>
+                  <td><?= $el->duration ?></td>
                 </tr>
                 <?php
               }

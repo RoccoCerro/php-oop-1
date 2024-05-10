@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/Production.php";
+require_once __DIR__ ."/Genre.php";
 class Movie extends Production
 {
 
@@ -12,4 +14,4 @@ class Movie extends Production
   }
 }
 
-$y = new Movie("Fast and furious", "ita", 3, $romantic, 355000,"2:20':22\"");
+// $y = new Movie("Fast and furious", "ita", 3, $romantic, 355000,"2:20':22\"");

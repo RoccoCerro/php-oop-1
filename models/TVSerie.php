@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/Production.php";
+require_once __DIR__ ."/Genre.php";
 Class TvSerie extends Production
 {
   public $numero_di_stagioni;
@@ -9,5 +11,3 @@ Class TvSerie extends Production
     $this->numero_di_stagioni = $_numero_di_stagioni;
   }
 }
-
-$x = new TvSerie("Fast and furious", "ita", 3, $romantic, 34);
