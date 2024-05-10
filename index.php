@@ -3,7 +3,8 @@
 require_once __DIR__ . "/models/Production.php";
 require_once __DIR__ . "/models/Genre.php";
 require_once __DIR__ . "/db.php";
-require_once __DIR__ . "/models/TVSerie.php"
+require_once __DIR__ . "/models/TVSerie.php";
+require_once __DIR__ . "/models/Movie.php";
 
 ?>
 
@@ -40,8 +41,8 @@ require_once __DIR__ . "/models/TVSerie.php"
           </thead>
           <tbody>
             <?php
-              for($i = 0; $i < count($movie); $i++){
-                $el = $movie[$i];
+              for($i = 0; $i < count($general); $i++){
+                $el = $general[$i];
                 ?>
                 <tr>
                   <th scope="row"><?= $i +1 ?></th>

@@ -1,5 +1,5 @@
 <?php
-Class TvSeries extends Production
+Class TvSerie extends Production
 {
   public $numero_di_stagioni;
 
@@ -10,5 +10,4 @@ Class TvSeries extends Production
   }
 }
 
-$x = new TvSeries("Fast and furious", "ita", 3, $romantic, 34);
-var_dump($x);
+$x = new TvSerie("Fast and furious", "ita", 3, $romantic, 34);
