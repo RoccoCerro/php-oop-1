@@ -21,7 +21,7 @@ require_once __DIR__ . "/db.php";
 
     <!-- Header -->
     <header>
-
+        
     </header>
 
     <!-- Main -->
@@ -43,7 +43,7 @@ require_once __DIR__ . "/db.php";
                 $el = $movie[$i];
                 ?>
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row"><?= $i +1 ?></th>
                   <td><?= $el->title ?></td>
                   <td><?= $el->language ?></td>
                   <td><?= $el->vote ?></td>
