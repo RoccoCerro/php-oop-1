@@ -109,7 +109,20 @@ require_once __DIR__ . "/models/Movie.php";
                           ?>
                           </li>
                           <li>
-                            
+                          <?php
+                          if($el->identifier() === "SerieTv"){
+                            echo "N.Season: ".$el->numero_di_stagioni;
+                          }else{
+                            echo "Profits: ".$el->profits;
+                          }
+                          ?>
+                          </li>
+                          <li>
+                          <?php
+                          if($el->identifier() === "Film"){
+                            echo "Duration: ".$el->duration;
+                          }
+                          ?>
                           </li>
                         </ul>
                       </p>
