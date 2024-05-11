@@ -54,7 +54,13 @@ require_once __DIR__ . "/models/Movie.php";
                   <td><?= $el->title ?></td>
                   <td><?= $el->language ?></td>
                   <td><?= $el->vote ?></td>
-                  <td><?= $el->genre->name ?></td>
+                  <td>
+                    <?php
+                    foreach($el->genres as $key => $element){
+                      echo $element->name . " ";
+                    }
+                    ?>
+                  </td>
                   <td><?= $el->profits ?></td>
                   <td><?= $el->duration ?></td>
                 </tr>

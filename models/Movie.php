@@ -7,7 +7,7 @@ class Movie extends Production
   public $profits;
   public $duration;
 
-  function __construct(string $_title, string $_language, int $_vote, Genre $_genre, int $_profits, string $_duration){
+  function __construct(string $_title, string $_language, int $_vote, $_genre, int $_profits, string $_duration){
     parent::__construct($_title, $_language, $_vote, $_genre);
     $this->profits = $_profits;
     $this->duration = $_duration;
