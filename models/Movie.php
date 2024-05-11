@@ -12,6 +12,10 @@ class Movie extends Production
     $this->profits = $_profits;
     $this->duration = $_duration;
   }
+
+  public function identifier(){
+    return "Film";
+  }
 }
 
 // $y = new Movie("Fast and furious", "ita", 3, $romantic, 355000,"2:20':22\"");

@@ -10,4 +10,8 @@ Class TvSerie extends Production
     parent::__construct($_title, $_language, $_vote, $_genre);
     $this->numero_di_stagioni = $_numero_di_stagioni;
   }
+
+  public function identifier(){
+    return "SerieTv";
+  }
 }

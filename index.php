@@ -69,6 +69,60 @@ require_once __DIR__ . "/models/Movie.php";
             ?>
           </tbody>
         </table>
+        <section>
+          <div class="container">
+            <div class="row">
+              <?php
+                for($i = 0; $i < count($general); $i++){
+                  $el = $general[$i];
+                ?>
+                <div class="col-4">
+                  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">
+                    <?php
+                      if($el->identifier() === "SerieTv"){
+                        ?>
+                        SerieTv
+                        <?php
+                      }else{
+                        ?>
+                        Film
+                        <?php
+                      }
+                    ?>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Title: <?= $el->title ?></h5>
+                      <p class="card-text">
+                        <ul class="list-group list-unstyled">
+                          <li class="">Language: <?= $el->language ?></li>
+                          <li class="">Vote: <?= $el->vote ?></li>
+                          <li class="">Genre: 
+                          <?php
+                          foreach($el->genres as $key => $element){
+                            if($key < count($el->genres)-1){
+                              echo $element->name . ", ";
+                            }else{
+                              echo $element->name;
+                            }
+                          }
+                          ?>
+                          </li>
+                          <li>
+                            
+                          </li>
+                        </ul>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <?php
+              }
+              ?>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
