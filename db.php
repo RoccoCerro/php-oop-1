@@ -14,8 +14,6 @@ $genres = [
   $commedy
 ];
 
-var_dump($genres);
-
 $general = [
   new Movie("Fast and furious", "ita", 3, [$romantic, $action], 355000,"2:20':22\""),
   new Movie("La vita è bella", "ita", 3, $genres, 355000,"2:20':22\""),
